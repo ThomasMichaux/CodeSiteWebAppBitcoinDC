@@ -1,0 +1,336 @@
+@layer animations {
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-out {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in-down {
+        from {
+            opacity: 0;
+            transform: translateY(-12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in-left {
+        from {
+            opacity: 0;
+            transform: translateX(16px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fade-out-right {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateX(16px);
+        }
+    }
+
+    @keyframes fade-out-down {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+    }
+
+    @keyframes scale-in {
+        from {
+            opacity: 0;
+            transform: scale(0.92);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes scale-in-spring {
+        from {
+            opacity: 0;
+            transform: scale(0.85);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slide-in-up {
+        from {
+            transform: translateY(100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes shake {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        10%,
+        50%,
+        90% {
+            transform: translateX(-4px);
+        }
+
+        30%,
+        70% {
+            transform: translateX(4px);
+        }
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes ping {
+
+        75%,
+        100% {
+            opacity: 0;
+            transform: scale(2);
+        }
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes skeleton-pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.4;
+        }
+    }
+
+    @keyframes progress-indeterminate {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(250%);
+        }
+    }
+
+    @keyframes modal-fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes modal-slide-up {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes toast-in {
+        from {
+            opacity: 0;
+            transform: translateX(16px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes toast-out {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateX(16px);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in var(--duration-base) var(--ease-out) both;
+    }
+
+    .animate-fade-in-up {
+        animation: fade-in-up var(--duration-slow) var(--ease-out) both;
+    }
+
+    .animate-fade-in-down {
+        animation: fade-in-down var(--duration-slow) var(--ease-out) both;
+    }
+
+    .animate-fade-in-left {
+        animation: fade-in-left var(--duration-base) var(--ease-out) both;
+    }
+
+    .animate-scale-in {
+        animation: scale-in var(--duration-slow) var(--ease-spring) both;
+    }
+
+    .animate-shake {
+        animation: shake 0.4s var(--ease-default) both;
+    }
+
+    .animate-spin {
+        animation: spin 0.7s var(--ease-linear) infinite;
+    }
+
+    .animate-pulse {
+        animation: pulse 2s var(--ease-default) infinite;
+    }
+
+    .delay-short {
+        animation-delay: var(--delay-short);
+    }
+
+    .delay-base {
+        animation-delay: var(--delay-base);
+    }
+
+    .delay-long {
+        animation-delay: var(--delay-long);
+    }
+
+    [data-reveal],
+    [data-reveal-stagger]>* {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity var(--duration-lazy) var(--ease-out),
+            transform var(--duration-lazy) var(--ease-out);
+    }
+
+    [data-reveal="fade"] {
+        transform: translateY(0);
+    }
+
+    [data-reveal="left"] {
+        transform: translateX(-24px);
+    }
+
+    [data-reveal="right"] {
+        transform: translateX(24px);
+    }
+
+    [data-reveal].is-visible,
+    [data-reveal-stagger]>.is-visible {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        [class*="animate-"] {
+            animation-name: fade-in !important;
+            animation-duration: var(--duration-fast) !important;
+        }
+
+        .animate-shake,
+        .animate-spin,
+        .animate-pulse {
+            animation: none !important;
+        }
+
+        .btn__spinner {
+            animation: none !important;
+        }
+
+        .skeleton {
+            animation: none !important;
+        }
+
+        .modal__backdrop,
+        .modal__container {
+            animation: none !important;
+        }
+
+        .toast {
+            animation: none !important;
+        }
+
+        [data-reveal],
+        [data-reveal-stagger]>* {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+}

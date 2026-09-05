@@ -1,0 +1,126 @@
+@layer base {
+    h1 {
+        font-size: clamp(1.875rem, 4vw + 1rem, 3rem);
+        font-weight: var(--font-weight-bold);
+        letter-spacing: var(--tracking-tight);
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 3vw + 0.75rem, 2.25rem);
+    }
+
+    h3 {
+        font-size: clamp(1.25rem, 2vw + 0.75rem, 1.875rem);
+    }
+
+    h4 {
+        font-size: var(--text-xl);
+    }
+
+    h5 {
+        font-size: var(--text-lg);
+    }
+
+    h6 {
+        font-size: var(--text-base);
+        font-weight: var(--font-weight-medium);
+    }
+
+    p {
+        font-size: var(--text-base);
+        line-height: var(--leading-normal);
+        text-wrap: pretty;
+    }
+
+    small,
+    .text-small {
+        font-size: var(--text-sm);
+    }
+
+    .text-xs {
+        font-size: var(--text-xs);
+    }
+
+    code {
+        padding: 0.125em 0.375em;
+        border-radius: var(--radius-sm);
+        font-family: var(--font-mono);
+        font-size: 0.875em;
+        background-color: var(--color-surface);
+    }
+
+    .mono {
+        font-family: var(--font-mono);
+    }
+
+    ::selection {
+        color: var(--color-text);
+        background-color: var(--color-btc-bg);
+    }
+
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-border) transparent;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: var(--radius-full);
+        background: var(--color-border);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-text-muted);
+    }
+
+    .skip-link {
+        position: absolute;
+        top: var(--space-2);
+        left: var(--space-2);
+        z-index: var(--z-toast);
+        display: inline-block;
+        padding: var(--space-2) var(--space-4);
+        border-radius: var(--radius-md);
+        font-size: var(--text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-bg);
+        background-color: var(--color-primary);
+        transform: translateY(-200%);
+        transition: transform var(--duration-fast) var(--ease-out);
+    }
+
+    .skip-link:focus {
+        transform: translateY(0);
+    }
+
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        white-space: nowrap;
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+    }
+
+    .visually-hidden--focusable:focus,
+    .visually-hidden--focusable:active {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        white-space: normal;
+        clip: auto;
+        overflow: visible;
+    }
+}

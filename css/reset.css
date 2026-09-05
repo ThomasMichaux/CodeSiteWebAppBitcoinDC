@@ -1,0 +1,98 @@
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        color-scheme: light dark;
+    }
+
+    body {
+        min-height: 100dvh;
+        font-family: var(--font-sans);
+        font-size: var(--text-base);
+        line-height: var(--leading-normal);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: var(--color-text);
+        background-color: var(--color-bg);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+
+    button {
+        border: none;
+        font-family: inherit;
+        background: none;
+        cursor: pointer;
+    }
+
+    img,
+    video,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    ul[role="list"],
+    ol[role="list"] {
+        list-style: none;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--leading-tight);
+        text-wrap: balance;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+    }
+
+    :focus {
+        outline: 2px solid var(--color-focus-ring);
+        outline-offset: 2px;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-focus-ring);
+        outline-offset: 2px;
+    }
+
+    :focus:not(:focus-visible) {
+        outline: none;
+    }
+}
